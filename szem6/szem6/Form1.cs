@@ -19,6 +19,8 @@ namespace szem6
         BindingList<RateData> Rates = new BindingList<RateData>();
         string result;
 
+        //BindingList<string> Currencies = new BindingList<string>();
+
         public Form1()
         {
             InitializeComponent();
