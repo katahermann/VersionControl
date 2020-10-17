@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using szem6.Entities;
 using szem6.MnbServiceReference;
 
 namespace szem6
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
+
         public Form1()
         {
             InitializeComponent();
             GetExchangeRates();
+            
+            dataGridView1.DataSource = Rates;
         }
 
         public void GetExchangeRates() 
