@@ -51,9 +51,24 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(83, 24);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2050,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            2006,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown1.TabIndex = 1;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            2025,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
