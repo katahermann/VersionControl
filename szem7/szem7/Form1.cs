@@ -28,9 +28,13 @@ namespace szem7
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
+        }
+
+        private void Simulation()
+        {
             for (int year = 2005; year <= 2024; year++)
             {
-                
+
                 for (int i = 0; i < Population.Count; i++)
                 {
                     SimStep(year, Population[i]);
@@ -139,6 +143,16 @@ namespace szem7
             }
 
             return deathprobability;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Simulation();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
