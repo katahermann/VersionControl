@@ -7,14 +7,10 @@ using szem8.Abstractions;
 
 namespace szem8.Entities
 {
-    public class BallFactory : IToyFactory
-    {
-        public Ball CreateNew()
-        {
-            return new Ball();
-        }
+    public class CarFactory : IToyFactory
 
-        Toy IToyFactory.CreateNew()
+    {
+        public Toy CreateNew()
         {
             throw new NotImplementedException();
         }
