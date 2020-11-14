@@ -36,15 +36,15 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Location = new System.Drawing.Point(12, 12);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(798, 449);
+            this.mainPanel.Size = new System.Drawing.Size(776, 426);
             this.mainPanel.TabIndex = 0;
             // 
             // createTimer
             // 
             this.createTimer.Enabled = true;
-            this.createTimer.Interval = 300;
+            this.createTimer.Interval = 3000;
             // 
             // conveyorTimer
             // 
