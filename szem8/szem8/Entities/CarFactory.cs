@@ -12,7 +12,7 @@ namespace szem8.Entities
     {
         public Toy CreateNew()
         {
-            throw new NotImplementedException();
+            return new Car();
         }
     }
 }
