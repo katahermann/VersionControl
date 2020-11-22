@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnitTestExample.Controllers;
 
@@ -15,13 +16,8 @@ namespace UnitTestExample.Test
          TestCase("abcd1234", false),
          TestCase("irf@uni-corvinus", false),
          TestCase("irf.uni-corvinus.hu", false),
-         TestCase("irf@uni-corvinus.hu", true),
-         TestCase("abcdefgh", false),
-         TestCase("ABCD1234", false),
-         TestCase("abcdef12", false),
-         TestCase("Abc1", false),
-         TestCase("ABcde123", true)
-         ]
+         TestCase("irf@uni-corvinus.hu", true)
+        ]
 
         public void TestValidateEmail(string email, bool expectedResult)
         {
@@ -36,14 +32,23 @@ namespace UnitTestExample.Test
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [Test,
+         TestCase("abcdefgh", false),
+         TestCase("ABCD1234", false),
+         TestCase("abcdef12", false),
+         TestCase("Abc1", false),
+         TestCase("1Abcdefg", true)
+         ]
+
+
         public void TestValidatePassword(string password, bool expectedResult)
         {
 
             // Arrange
-            var accountController = new AccountController();
+            Regex regex = new Regex("^(?=.*[0-9])(?=.>[a-z])(?=.*[A-Z]).{8,}$");
 
             // Act
-            var actualResult = accountController.ValidatePassword(password);
+            var actualResult = regex.IsMatch(password);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
