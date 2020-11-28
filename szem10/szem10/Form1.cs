@@ -48,13 +48,13 @@ namespace szem10
                 "{0}. generáció",
                 generation);
 
-            gc.ResetCurrentLevel();
 
             var playerList = from p in gc.GetCurrentPlayers()
                              orderby p.GetFitness() descending
                              select p;
             var topPerformers = playerList.Take(populationSize / 2).ToList();
 
+            gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
             {
                 var b = p.Brain.Clone();
@@ -68,6 +68,7 @@ namespace szem10
                 else
                     gc.AddPlayer(b.Mutate());
             }
+            gc.Start();
 
             var winners = from p in topPerformers
                           where p.IsWinner
@@ -79,7 +80,17 @@ namespace szem10
                 return;
             }
 
-            gc.Start();
+            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
