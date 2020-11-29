@@ -68,7 +68,7 @@ namespace szem10
                 else
                     gc.AddPlayer(b.Mutate());
             }
-            gc.Start();
+            
 
             var winners = from p in topPerformers
                           where p.IsWinner
@@ -80,7 +80,8 @@ namespace szem10
                 return;
             }
 
-            
+            gc.Start();
+
 
         }
 
