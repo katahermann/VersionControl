@@ -16,5 +16,17 @@ namespace Covid19
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Test test = new Test();
+            test.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            View view = new View();
+            view.Show();
+        }
     }
 }
