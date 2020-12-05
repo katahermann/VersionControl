@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Covid19
 {
-    class Patient
+    public class Patient
     {
-        public Patient(int id,int kor, bool nem, bool kulfold, bool erintkez, bool tunet, bool korlatoz, bool teszt)
+        public Patient(int id,int kor, int nem, int kulfold, int erintkez, int tunet, int korlatoz, int teszt)
         {
             this.ID = id;
             this.Kor = kor;
@@ -19,13 +19,15 @@ namespace Covid19
             this.Korlatoz = korlatoz;
             this.Teszt = teszt;
         }
+
+
         public int ID { get; }
         public int Kor { get; }
-        public bool Nem { get;}
-        public bool Kulfold { get; }
-        public bool Erintkez { get; }
-        public bool Tunet { get; }
-        public bool Korlatoz { get; }
-        public bool Teszt { get; }
+        public int Nem { get;}
+        public int Kulfold { get; }
+        public int Erintkez { get; }
+        public int Tunet { get; }
+        public int Korlatoz { get; }
+        public int Teszt { get; }
     }
 }

@@ -14,6 +14,7 @@ namespace Covid19
         [STAThread]
         static void Main()
         {
+            Data data = new Data();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
