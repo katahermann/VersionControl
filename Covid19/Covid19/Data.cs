@@ -17,6 +17,7 @@ namespace Covid19
 
 
         public LinkedList<Patient> Patients;
+        public int lastID { get; set; }
 
 
         private void LoadData()
@@ -31,6 +32,7 @@ namespace Covid19
                     Patients.AddLast(new Patient(int.Parse(line[0]), int.Parse(line[1]), int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), int.Parse(line[6]), int.Parse(line[7])));
                 }
             }
+            lastID = Patients.Last.Value.ID;
         }
         public void AddData(Patient pat)
         {
