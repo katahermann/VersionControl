@@ -8,9 +8,10 @@ namespace Covid19
 {
     class Patient
     {
-        public Patient(int id, bool nem, bool kulfold, bool erintkez, bool tunet, bool korlatoz, bool teszt)
+        public Patient(int id,int kor, bool nem, bool kulfold, bool erintkez, bool tunet, bool korlatoz, bool teszt)
         {
             this.ID = id;
+            this.Kor = kor;
             this.Nem = nem;
             this.Kulfold = kulfold;
             this.Erintkez = erintkez;
@@ -19,6 +20,7 @@ namespace Covid19
             this.Teszt = teszt;
         }
         public int ID { get; }
+        public int Kor { get; }
         public bool Nem { get;}
         public bool Kulfold { get; }
         public bool Erintkez { get; }
