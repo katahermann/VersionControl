@@ -26,8 +26,8 @@ namespace Covid19
             {
                     QuestionField qf = new QuestionField(names[r]);
                     qf.Top = r * qf.Height + (int)(Math.Floor((double)(r / 3))) * lineWidth;
-                    qf.Left = 10;
-                    panel1.Controls.Add(qf);
+                    qf.Left = qf.Width + (int)(Math.Floor((double)(r / 3))) * lineWidth;
+                panel1.Controls.Add(qf);
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -38,19 +38,7 @@ namespace Covid19
             {
                 ready += sf.Value.ToString();
             }
-            if (ready.Equals(_currentQuiz.Solution))
-            {
-                foreach (var sf in panel1.Controls.OfType<QuestionField>())
-                {
-                    sf.Active = false;
-                }
 
-                MessageBox.Show("Good job!:)");
-            }
-            else
-            {
-                MessageBox.Show("Try again :(");
-            }
         }
     }
 }
