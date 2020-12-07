@@ -10,30 +10,48 @@ namespace Covid19
 {
     class QuestionField : Button
     {
-            public QuestionField(string q)
+            public QuestionField()
             {
                 this.Height = 30;
-                this.Width = 150;
+                this.Width = 50;
                 this.BackColor = Color.White;
-                Value = q;
+                Value = 1;
+                MouseDown += QuestionField_MouseDown;
             }
 
-            private string _value;
+            private void QuestionField_MouseDown(object sender, MouseEventArgs e)
+            {
+                if (e.Button == MouseButtons.Left)
+                    Value--;
+                if (e.Button == MouseButtons.Right)
+                    Value++;
+            }
 
-            public string Value
+        private int _value;
+            public int Value
             {
                 get { return _value; }
                 set
                 {
                     _value = value;
-                if (_value != "")
-                    Text = _value;
-                else
-                    Text = "";
+                if (_value >= 1)
+                {
+                    _value = 0;
+                    this.BackColor = Color.White;
+                }
+                else if (_value <= 0)
+                {
+                    _value = 1;
+                    this.BackColor = Color.LightGreen;
+                }
+                    if (_value == 1)
+                        Text = "Igen";
+                    else
+                        Text = "Nem";
                 }
             }
 
-            private bool _active;
+        private bool _active;
 
             public bool Active
             {
