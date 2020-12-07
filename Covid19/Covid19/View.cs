@@ -12,9 +12,50 @@ namespace Covid19
 {
     public partial class View : Form
     {
+        Data data;
         public View()
         {
+            data = new Data();
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Patient> qP = (from P in data.Patients
+                                where P.Nem == 1
+                                select new Patient()
+                                {
+                                    ID = P.ID,
+                                    Nem = P.Nem,
+                                    Kor = P.Kor,
+                                    Kulfold = P.Kulfold,
+                                    Erintkez = P.Erintkez,
+                                    Tunet = P.Tunet,
+                                    Korlatoz = P.Korlatoz,
+                                    Teszt = P.Teszt
+                                }).ToList();
+
+            dataGridView1.DataSource = qP;
+            chart1.DataSource = qP;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<Patient> qP = (from P in data.Patients
+                                where P.Nem == 0
+                                select new Patient()
+                                {
+                                    ID = P.ID,
+                                    Nem = P.Nem,
+                                    Kor = P.Kor,
+                                    Kulfold = P.Kulfold,
+                                    Erintkez = P.Erintkez,
+                                    Tunet = P.Tunet,
+                                    Korlatoz = P.Korlatoz,
+                                    Teszt = P.Teszt
+                                }).ToList();
+
+            dataGridView1.DataSource = qP;
+            chart1.DataSource = qP;
         }
     }
 }

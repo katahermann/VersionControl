@@ -30,15 +30,19 @@ namespace Covid19
             this.Korlatoz = korlatoz;
             this.Teszt = teszt;
         }
+        public Patient()
+        {
+
+        }
 
 
         public int ID { get; set; }
-        public int Kor { get; }
-        public int Nem { get;}
-        public int Kulfold { get; }
-        public int Erintkez { get; }
-        public int Tunet { get; }
-        public int Korlatoz { get; }
-        public int Teszt { get; }
+        public int Kor { get; set; }
+        public int Nem { get; set; }
+        public int Kulfold { get; set;  }
+        public int Erintkez { get; set;  }
+        public int Tunet { get; set;  }
+        public int Korlatoz { get; set; }
+        public int Teszt { get; set; }
     }
 }
