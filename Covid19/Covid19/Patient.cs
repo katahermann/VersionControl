@@ -8,7 +8,18 @@ namespace Covid19
 {
     public class Patient
     {
-        public Patient(int id,int kor, int nem, int kulfold, int erintkez, int tunet, int korlatoz, int teszt)
+        public Patient(int kor, int nem, int kulfold, int erintkez, int tunet, int korlatoz, int teszt)
+        {
+            this.Kor = kor;
+            this.Nem = nem;
+            this.Kulfold = kulfold;
+            this.Erintkez = erintkez;
+            this.Tunet = tunet;
+            this.Korlatoz = korlatoz;
+            this.Teszt = teszt;
+        }
+
+        public Patient(int id, int kor, int nem, int kulfold, int erintkez, int tunet, int korlatoz, int teszt)
         {
             this.ID = id;
             this.Kor = kor;
@@ -21,7 +32,7 @@ namespace Covid19
         }
 
 
-        public int ID { get; }
+        public int ID { get; set; }
         public int Kor { get; }
         public int Nem { get;}
         public int Kulfold { get; }

@@ -36,9 +36,10 @@ namespace Covid19
         }
         public void AddData(Patient pat)
         {
+            pat.ID = ++lastID;
             Patients.AddLast(pat);
             string newFileName = "Patients.csv";
-            string patientDetails = $"{pat.ID};{pat.Kor};{pat.Nem};{pat.Kulfold};{pat.Erintkez};{pat.Tunet};{pat.Korlatoz};{pat.Teszt};";
+            string patientDetails = $"{pat.ID};{pat.Kor};{pat.Nem};{pat.Kulfold};{pat.Erintkez};{pat.Tunet};{pat.Korlatoz};{pat.Teszt};{Environment.NewLine}";
             File.AppendAllText(newFileName, patientDetails);
         }
 

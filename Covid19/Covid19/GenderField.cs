@@ -14,7 +14,7 @@ namespace Covid19
         {
             this.Height = 30;
             this.Width = 50;
-            this.BackColor = Color.LightBlue;
+            this.BackColor = Color.LightPink;
             Value = 1;
             MouseDown += QuestionField_MouseDown;
         }
@@ -37,17 +37,17 @@ namespace Covid19
                 if (_value >= 1)
                 {
                     _value = 0;
-                    this.BackColor = Color.LightBlue;
+                    this.BackColor = Color.LightPink;
                 }
                 else if (_value <= 0)
                 {
                     _value = 1;
-                    this.BackColor = Color.LightPink;
+                    this.BackColor = Color.LightBlue;
                 }
                 if (_value == 1)
-                    Text = "Nő";
-                else
                     Text = "Férfi";
+                else
+                    Text = "Nő";
             }
         }
 

@@ -13,8 +13,10 @@ namespace Covid19
     public partial class Test : Form
     {
         private TextBox textBox1;
+        Data data;
         public Test()
         {
+            data = new Data();
             InitializeComponent();
             CreateQField();
         }
@@ -55,15 +57,27 @@ namespace Covid19
         private void button1_Click(object sender, EventArgs e)
         {
             int ready = 0;
+            int cnt = 0;
+            int[] datas = new int[7];
+            foreach (var tb in panel1.Controls.OfType<TextBox>())
+            {
+                datas[cnt++] = int.Parse(tb.Text);
+            }
+            foreach (var gf in panel1.Controls.OfType<GenderField>())
+            {
+                datas[cnt++] = gf.Value;
+            }
 
             foreach (var sf in panel1.Controls.OfType<QuestionField>())
             {
                 ready += sf.Value;
+                datas[cnt++] = sf.Value;
             }
             if (ready > 2)
                 MessageBox.Show("COVID-19 ALERT!");
             else
                 MessageBox.Show("GOOD TO GO!");
+            data.AddData(new Patient(datas[0], datas[1], datas[2], datas[3], datas[4], datas[5], datas[6]));
         }
     }
 }
