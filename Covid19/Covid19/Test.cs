@@ -12,7 +12,6 @@ namespace Covid19
 {
     public partial class Test : Form
     {
-        private TextBox textBox1;
         Data data;
         public Test()
         {
