@@ -23,7 +23,7 @@ namespace Covid19
         private void CreateQField()
         {
             int lineWidth = 5;
-            string[] names = {"Nem","Kor","Kerdes1", "Kerdes2", "Kerdes3", "Kerdes4", "Kerdes5", };
+            string[] names = { "Adja meg a korát!", "Adja meg a nemét!", "Jártál-e külföldön az elmúlt 14 napban?", "Érintkeztél koronavírusos beteggel az elmúlt 14 napban?", "Tapasztaltál-e magadon koronavírusra utaló tüneteket?", "Megszegted-e a kormány által megszabott korlátozásokat?", "Rendelkezel pozitív PCR teszttel?", };
             panel1.Controls.Add(new TextBox() { Name = "Kor", Margin = new System.Windows.Forms.Padding(10, 20, 0, 0), Text = "20", Height = 30, Width = 47, Top = 8, Left = 326 });
             for (int r = 1; r < 7; r++)
             {
@@ -45,21 +45,25 @@ namespace Covid19
             for (int i = 0; i < 7; i++)
             {
                 Label L = new Label();
-                L.Top = i * L.Height + (int)(Math.Floor((double)(i / 3))) * lineWidth;
-                L.Left = L.Width + (int)(Math.Floor((double)(10))) * lineWidth;
+                L.Top = (int)(1.37 * i * L.Height + (int)(Math.Floor((double)(i / 3))) * lineWidth + 0.7);
+                L.Left = 0;
                 L.Text = names[i];
+                L.Width = 1404;
                 panel1.Controls.Add(L);
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string ready = "";
+            int ready = 0;
 
             foreach (var sf in panel1.Controls.OfType<QuestionField>())
             {
-                ready += sf.Value.ToString();
+                ready += sf.Value;
             }
-
+            if (ready > 2)
+                MessageBox.Show("COVID-19 ALERT!");
+            else
+                MessageBox.Show("GOOD TO GO!");
         }
     }
 }
