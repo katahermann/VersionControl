@@ -24,7 +24,7 @@ namespace Covid19
         private void CreateQField()
         {
             int lineWidth = 5;
-            string[] names = { "Adja meg a korát!", "Adja meg a nemét!", "Jártál-e külföldön az elmúlt 14 napban?", "Érintkeztél koronavírusos beteggel az elmúlt 14 napban?", "Tapasztaltál-e magadon koronavírusra utaló tüneteket?", "Megszegted-e a kormány által megszabott korlátozásokat?", "Rendelkezel pozitív PCR teszttel?", };
+            string[] names = { "Add meg az életkorod!", "Add meg a nemed!", "Jártál-e külföldön az elmúlt 14 napban?", "Érintkeztél koronavírusos beteggel az elmúlt 14 napban?", "Tapasztaltál-e magadon koronavírusra utaló tüneteket?", "Megszegted-e a kormány által megszabott korlátozásokat?", "Rendelkezel pozitív PCR teszttel?", };
             panel1.Controls.Add(new TextBox() { Name = "Kor", Margin = new System.Windows.Forms.Padding(10, 20, 0, 0), Text = "20", Height = 30, Width = 47, Top = 8, Left = 326 });
             for (int r = 1; r < 7; r++)
             {

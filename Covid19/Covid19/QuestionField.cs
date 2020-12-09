@@ -70,7 +70,6 @@ namespace Covid19
             {
                 this.SuspendLayout();
                 this.ResumeLayout(false);
-
             }
         }
     }

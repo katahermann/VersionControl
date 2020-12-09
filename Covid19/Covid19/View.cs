@@ -71,7 +71,7 @@ namespace Covid19
             this.chart1.Titles.Clear();
             string[] seriesArray = { "Pozitív", "Negatív" };
             this.chart1.Titles.Add("Fertőzöttek");
-            this.chart1.Palette = ChartColorPalette.Bright;
+            this.chart1.Palette = ChartColorPalette.BrightPastel;
             for (int i = 0; i < seriesArray.Length; i++)
             {
                 Series series = this.chart1.Series.Add(seriesArray[i]);
@@ -126,7 +126,7 @@ namespace Covid19
             dataGridView1.DataSource = qP;
             this.chart1.Series.Clear();
             this.chart1.Titles.Clear();
-            this.chart1.Palette = ChartColorPalette.Bright;
+            this.chart1.Palette = ChartColorPalette.BrightPastel;
             string[] seriesArray = { "Pozitív", "Negatív"};
             this.chart1.Titles.Add("Fertőzöttek");
             for (int i = 0; i < seriesArray.Length; i++)
