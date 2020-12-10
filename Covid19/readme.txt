@@ -10,7 +10,7 @@ A felhasználói felületen látható 'Teszt kitöltése' gombra kattintva megke
 	Megszegted-e a kormány által megszabott korlátozásokat?
 	Rendelkezel pozitív PCR teszttel?
 	
-Ha a fent említett kérdések közül bármelyik háromra igen a válasz, akkor potenciális fertőzött vagy. (Természetesen, a szűrés eredménye nem reprezentatív)
+Ha a fent említett kérdések közül bármelyik háromra (vagy többre) igen a válasz, akkor potenciális fertőzött vagy. (Természetesen, a szűrés eredménye nem reprezentatív)
 	
 A szoftveremhez készítettem egy csv fájlt, amiben a tesztet már korábban kitöltő (fiktív) emberek válaszai találhatók. A teszt ellenőrzése után, az újonnan felvett adatok is belekerülnek a csv fájlba.
 
